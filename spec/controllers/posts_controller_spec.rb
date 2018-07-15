@@ -9,9 +9,9 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it "assigns [my_post] to @posts" do
+    it "assigns my_post to @posts" do
       get :index
-      expect(assigns(:posts)).to eq([my_post])
+      expect(assigns(:posts)).to eq(my_post)
     end
   end
 

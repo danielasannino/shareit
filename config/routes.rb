@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
+
   resources :topics do
     resources :posts, except: [:index]
+    resources :sponsored_posts
   end
 
   resources :questions
 
   resources :advertisements
 
-
-
   get 'about' => 'welcome#about'
 
-  get 'welcome/contact'
+  get 'faq' => 'welcome#faq'
 
-  get 'welcome/faq'
+  get 'contact' => 'welcome#contact'
 
   root 'welcome#index'
 

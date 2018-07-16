@@ -55,4 +55,9 @@ def destroy
     end
   end
 
+  private
+ def post_params
+   params.require(:post).permit(:title, :body)
+ end
+
 end

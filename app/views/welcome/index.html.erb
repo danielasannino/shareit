@@ -1,23 +1,26 @@
+<br>
 <div class="jumbotron">
-   <h1>Shareit</h1>
-   <p>Shareit is a resource for sharing links with your friends!</p>
-   <p>
-     <%= link_to "Sign In", new_session_path %> or
-     <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %> today!
-   </p>
- </div>
+  <h1>Shareit</h1>
+  <p>Shareit is for sharing messages & information with your friends, and it's also a great way of making <em>new</em> friends!</p>
+  <p>
+    <% unless current_user %>
+      <%= link_to "Sign In", new_session_path %> or
+      <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %> today!
+    <% end %>
+  </p>
+</div>
 
- <div class="row">
-   <div class="col-md-4">
-     <h2>Solves world hunger</h2>
-     <p>Shareit will deliver food and water to those in need, all over the world.</p>
-   </div>
-   <div class="col-md-4">
-     <h2>Eliminates poverty</h2>
-     <p>Shareit will deliver money and education to those in need, all over the world.</p>
-   </div>
-   <div class="col-md-4">
-     <h2>Makes you better looking</h2>
-     <p>Shareit will make you better looking: it's scientifically proven to make men look like Ryan Gosling and women look like Shakira.</p>
-   </div>
- </div>
+<div class="row">
+  <div class="col-md-4">
+    <h2>Share information</h2>
+    <p>Post to Shareit to engage in conversation with others in this community. Share your feedback with comments on other member's posts.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Vote for posts you like</h2>
+    <p>Don't have time to give detailed feedback? Use the Vote feature (up or down) on posts.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Save Favorites</h2>
+    <p>Shareit's Favorite feature makes it easy to save favorite posts from others to your personal list of Favorites so you can access it later on!.</p>
+  </div>
+</div>

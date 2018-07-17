@@ -1,4 +1,5 @@
 module RandomData
+
   def self.random_name
     first_name = random_word.capitalize
     last_name = random_word.capitalize
@@ -8,6 +9,7 @@ module RandomData
   def self.random_email
     "#{random_word}@#{random_word}.#{random_word}"
   end
+
   def self.random_paragraph
     sentences = []
     rand(4..6).times do
@@ -30,10 +32,6 @@ module RandomData
   def self.random_word
     letters = ('a'..'z').to_a
     letters.shuffle!
-    letters[0,rand(3..8)].join
-  end
-
-  def self.random_price(min_value = 1, max_value = 100)
-    rand(min_value..max_value)
+    letters[0, rand(3..8)].join
   end
 end

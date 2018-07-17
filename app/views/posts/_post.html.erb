@@ -1,11 +1,8 @@
-<div class="media">
-  <div class="media-body">
-    <h4 class="media-heading">
-      <%= link_to post.title, topic_post_path(@topic, post) %>
-    </h4>
-    <small>
-      submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %> <br>
-      <%= post.comments.count %> Comments
-    </small>
-  </div>
+<p><%= post.body %></p>
+<div>
+  <h4>Comments</h4>
+  <%= render post.comments %>
 </div>
+<%= if current_user %>
+ <%= render 'comments/form', comment: Comment.new, post: post %>
+<% end %>

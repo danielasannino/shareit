@@ -44,6 +44,7 @@ posts = Post.all
 # Create Comments
 100.times do
   Comment.create!(
+    user: users.sample,
     post: posts.sample,
     body: RandomData.random_paragraph
   )
@@ -63,11 +64,20 @@ end
  Post.find_or_create_by(title: "Unique title", body: "Unique body")
  puts "#{Post.count}"
 
-user = User.first
-user.update_attributes!(
-  email: 'youremail.com',
-  password: 'helloworld'
-)
+ # Create an admin user
+ admin = User.create!(
+   name:     'Admin User',
+   email:    'admin@example.com',
+   password: 'helloworld',
+   role:     'admin'
+ )
+
+ # Create a member
+ member = User.create!(
+   name:     'Member User',
+   email:    'member@example.com',
+   password: 'helloworld'
+ )
 
 puts "Seed finished"
 puts "#{User.count} users created"
